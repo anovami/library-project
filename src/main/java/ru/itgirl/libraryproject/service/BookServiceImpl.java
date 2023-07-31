@@ -17,8 +17,8 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public BookDto getBookById(Long id) {
-        Book book = bookRepository.findById(id).orElseThrow();
-        return convertToDto(book);
+//        BookDto book = bookRepository.findById(id).orElseThrow();
+        return null;
     }
     private BookDto convertToDto(Book book) {
         List<AuthorDto> authorDtoList = book.getAuthors()
@@ -30,7 +30,6 @@ public class BookServiceImpl implements BookService {
                         .build()
                 ).toList();
         return BookDto.builder()
-                .authors(authorDtoList)
                 .id(book.getId())
                 .name(book.getName())
                 .build();

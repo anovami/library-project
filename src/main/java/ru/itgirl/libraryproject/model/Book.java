@@ -6,7 +6,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.util.Set;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -31,7 +31,7 @@ public class Book {
             name = "author_book",
             inverseJoinColumns = @JoinColumn(name = "author_id", referencedColumnName = "id"),
             joinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"))
-    private Set<Author> authors;
+    private List<Author> authors;
 
 
 }
