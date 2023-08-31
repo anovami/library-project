@@ -1,10 +1,7 @@
 package ru.itgirl.libraryproject.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
@@ -19,10 +16,14 @@ public class Book {
     private Long id;
 
     @Column(nullable = false)
+    @Setter
     private String name;
-
+    @Column(insertable=false, updatable=false)
+    @Setter
+    private Long genre_id;
     @ManyToOne
-    @JoinColumn(name="genre_id", nullable = false)
+    @JoinColumn(name="genre_id")
+    @Setter
     public Genre genre;
 
 

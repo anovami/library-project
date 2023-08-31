@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.itgirl.libraryproject.model.Genre;
 
 import java.util.List;
 
@@ -11,9 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Builder
-public class AuthorDto {
-    private Long id;
+public class GenreCreateDto {
     private String name;
-    private String surname;
-    private List<BookDto> books;
+    private Genre genre;
 }
